@@ -121,6 +121,90 @@
     background-color: var(--primary-btn-hover);
   }
   
+  .sub-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--font-info);
+    letter-spacing: 0.4rem;
+  }
+  
+  /* movies */
+  
+  .movies-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .movie-card {
+    position: relative;
+    width: 20rem;
+    margin: 2rem;
+    border: 1px solid var(--font-info);
+  }
+  
+  .movie-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  
+  .movie-year {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.8rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+    font-weight: 500;
+    background-color: var(--primary-btn-hover);
+  }
+  
+  .movie-price {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.8rem;
+    font-size: 1.4rem;
+    letter-spacing: 0.2rem;
+    font-weight: 500;
+    background-color: var(--movie-price);
+    color: var(--dark);
+  }
+  
+  .movie-info {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(var(--dark-rgb), 0.6);
+    width: 100%;
+    color: var(--font-info);
+    padding-bottom: 2rem;
+  }
+  
+  .movie-info h3,
+  .movie-info h4 {
+    text-align: center;
+    margin: 0;
+    padding: 10px 0px;
+    text-transform: uppercase;
+  }
+  
+  .movie-card:hover {
+    cursor: pointer;
+     /* look into easein-out-in instead to fix the animation */
+    transform: scale(1.2);
+      /* look into the syntax for scaling animations */
+    animation: grow 0.5s ease-out;
+  }
+  
+  .movie-card:hover .movie-info {
+    display: block;
+    animation: fadeOut 0.5s ease;
+  }
+  
   @media screen and (max-width: 596px) {
     .nav-container,
     .nav-links-container {
@@ -131,6 +215,10 @@
     .header {
       position: static;
       height: 100%;
+    }
+  
+    .movie-card {
+      width: 80vw;
     }
   }
   
@@ -147,98 +235,27 @@
       top: 40%;
     }
   }
-
-  .sub-title{
-      text-align: center;
-      font-size: 3rem;
-  }
-  .movie-card {
-      position: relative;
-      width:20rem;
-    margin:2rem;
-    border:1px solid var(--font-info)
-  }
-
-  .movie-card img{
-      width: 100%;
-      height: 100%;
-      object-fit:contain;
-  }
-
-  .movies-container{
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-
-  .movie-year{
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: 0.8rem;
-      font-size: 1.4rem;
-      letter-spacing:0.2rem;
-      font-weight: 500px;
-      background-color: var(--movie-price);
-      color: var(--dark);
-  }
-  .movie-price{
-      position: absolute;
-      top: 0;
-      right: 0;
-  }
-
-  .movie-info {
-      position: absolute;
-      bottom: 0;
+  
+  @keyframes fadeOut {
+    0% {
+      background-color: rgba(var(--dark-rgb), 1);
+    }
+  
+    50% {
+      background-color: rgba(var(--dark-rgb), 0.8);
+    }
+  
+    100% {
       background-color: rgba(var(--dark-rgb), 0.6);
-      width: 100%;
-      color: var(--font-info);
-      padding-bottom: 2rem;
-
+    }
   }
-
-  .movie-info h3,
-  .movie-info h4,{
-      text-align: center;
-      margin: 0;
-      padding: 10px, 0px;
-      text-transform: uppercase;
-  }
-
-  .movie-card:hover {
-      cursor: pointer;
-      /* look into easein-out-in instead to fix the animation */
-      animation: grow 0.5s ease-out;
-      /* look into the syntax for scaling animations */
+  
+  @keyframes grow {
+    0% {
+      transform: scale(1);
+    }
+  
+    100% {
       transform: scale(1.2);
-  }
-
-  .movie-card:hover .movie-info{
-      display: block;
-      animation:fadeout 0.5s ease-in-out;
-  }
-
-  @keyframes fadeout{
-    0%{
-        background-color: rgba(var(--dark-rgb), 1;
-    }
-
-    50%{
-        background-color: rgba(var(--dark-rgb), 0.8);
-    }
-
-    100%{
-        background-color: rgba(var(--dark-rgb), 0.6);
-    }
-  }
-
-  @keyframes grow{
-    0%{
-        transform: scale(1)
-    }
-
-    100%{
-        transform: scale(1.2)
     }
   }
