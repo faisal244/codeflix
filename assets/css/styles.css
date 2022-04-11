@@ -32,6 +32,7 @@
     width: 100%;
     height: 6.8rem;
     background-color: var(--dark);
+    z-index: 10;
   }
   
   /* nav styles */
@@ -155,6 +156,7 @@
       position: relative;
       width:20rem;
     margin:2rem;
+    border:1px solid var(--font-info)
   }
 
   .movie-card img{
@@ -208,6 +210,7 @@
       cursor: pointer;
       /* look into easein-out-in instead to fix the animation */
       animation: grow 0.5s ease-out;
+      /* look into the syntax for scaling animations */
       transform: scale(1.2);
   }
 
