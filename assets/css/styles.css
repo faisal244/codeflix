@@ -1,3 +1,12 @@
+:root{
+
+
+}
+
+html{
+    font-size:10px;
+}
+
 body{
     margin: 0;
 }
@@ -7,10 +16,33 @@ body{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
+    align-items: center;
+}
+
+.nav-links-container{
+    display: flex;
+    flex-direction: row;
+}
+
+.nav-link{
+    margin: 1.6rem;
+    
+}
+
+.nav-link a{
+    text-decoration: none;
+    font: size 1.4rem;
+    color: grey;
+}
+
+.nav-link a:hover{
+    color: red;
+
 }
 
 @media screen and (max-width: 596px) {
-    .nav-container{
+    .nav-container, 
+    .nav-links-container{
         flex-direction: column;
         align-items: center;
     }
